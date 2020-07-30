@@ -17,6 +17,8 @@ void main(List<String> arguments) async {
   File pipInstallerFile = await downloadLatestPip(installDirectory.path);
   setEnvVariables(installDirectory);
   runPipInstaller(pipInstallerFile);
+  pipInstallerFile.deleteSync();
+  print('Python and Pip are installed now. Just open a new Shell and you will be able to use it.');
 }
 
 void runPipInstaller(File pipInstallerFile) {
